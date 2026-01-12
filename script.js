@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const addNewBookBtn = document.getElementById('add-new-book');
   const bookList = document.getElementById('book-list');
 
+  // Create loader element
+  const loader = document.createElement('div');
+  loader.classList.add('loader');
+  document.body.appendChild(loader);
+
   let books = JSON.parse(localStorage.getItem('books')) || [];
 
   // Open modal
@@ -36,13 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
   chooserBtn.addEventListener('click', () => {
     if (books.length === 0) {
       bookTitle.textContent = 'Add a book first!';
+      bookTitle.style.opacity = 1;
     } else {
-      const randomBook = books[Math.floor(Math.random() * books.length)];
-      bookTitle.textContent = randomBook;
+      // Show loader
+      loader.style.display = 'block';
       bookTitle.style.opacity = 0;
+
+      // Random delay between 1 and 3 seconds
+      const delay = 1000 + Math.random() * 2000;
+
       setTimeout(() => {
+        // Hide loader
+        loader.style.display = 'none';
+        const randomBook = books[Math.floor(Math.random() * books.length)];
+        bookTitle.textContent = randomBook;
         bookTitle.style.opacity = 1;
-      }, 100);
+      }, delay);
     }
   });
 
