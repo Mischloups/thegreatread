@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Chooser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <button id="add-btn" class="add-btn">+</button>
+    <div id="book-title" class="book-title"></div>
+    <button id="chooser-btn" class="chooser-btn">Choose a book</button>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Your Book List</h2>
+      <input type="text" id="new-book" placeholder="Add a book title...">
+      <button id="add-new-book">Add</button>
+      <ul id="book-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
