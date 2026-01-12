@@ -115,8 +115,16 @@ input[type="text"] {
   background: black;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 20px;
   cursor: pointer;
+  border-radius: 20px; /* Rounded corners */
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+#add-new-book:hover {
+  background: #333; /* Optional: subtle hover effect */
 }
 /* Loading circle */
 .loader {
